@@ -131,11 +131,4 @@ app.get('/create-video', async (req, res) => {
     return res.json(`${id}/final.mp4`);
   });
 
-  app.get('/samples', (req, res) => {
-    const summs = fs.readdirSync('./summaries').filter(dir => {
-      return dir.match(/^[a-z0-9]{6,}$/) && fs.existsSync(`./summaries/${dir}/final.mp4`);
-    });
-    res.json(stories);
-  });
-
 app.listen(8080, ()=> console.log("listening on http://localhost:8080"));
