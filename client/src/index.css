@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 body{
-  background:linear-gradient(rgb(109, 101, 173) 0%, black 40%), #000;
+  background:linear-gradient(#a78bfa 0%, black 40%), #000;
   @apply text-white min-h-dvh;
+}
+
+x/* Custom CSS for carousel scrolling */
+.carousel-container {
+  height: auto; /* Ensures the container height is 100% of its parent */
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-container:hover {
+  animation: scroll 9s linear infinite;
+}
+.carousel-wrapper {
+  height: 380px; /* Set to the height of one image */
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%); /* Adjust based on the total height of images */
+  }
 }
